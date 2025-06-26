@@ -1,0 +1,235 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Color Variables */
+:root {
+  --bg-color: #000;
+  --second-bg-color: #121212;
+  --text-color: #fff;
+  --main-color: #ffa500;
+  --white-color: #eeecec;
+}
+
+/* Body Styling */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--main-color);
+}
+
+/* Card Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 0 1rem;
+}
+
+/* Individual Card */
+.card {
+  background: var(--second-bg-color);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.3s ease;
+  padding: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 165, 0, 0.2);
+}
+
+/* Card Stagger Animation */
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+.card:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Image Area */
+.card-img {
+  height: 180px;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Card Body */
+.card-body {
+  padding: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--white-color);
+}
+
+.card-desc {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Demo Button */
+.demo-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.demo-btn:hover {
+  background: var(--white-color);
+  color: var(--main-color);
+}
+
+/* Back Arrow Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px var(--main-color);
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 999;
+}
+
+.back-btn:hover {
+  background-color: var(--white-color);
+  color: var(--main-color);
+  transform: scale(1.1);
+}
+
+/* =============================
+   Responsive Design
+============================= */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-desc {
+    font-size: 1rem;
+  }
+
+  .demo-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .back-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .cards {
+    gap: 20px;
+  }
+
+  .card-img {
+    height: 140px;
+    font-size: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-desc {
+    font-size: 0.95rem;
+  }
+
+  .demo-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .back-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}

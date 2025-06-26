@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Website</title>
+    <!-- Google Fonts and Boxicons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+
+    <!-- Arrow Button -->
+
+    <a href="./index.html" class="back-btn"><i class='bx bx-arrow-back'></i></a>
+
+
+    <!-- Section: Projects -->
+    <section class="container">
+        <h2 class="heading">My Projects</h2>
+        <div class="cards" id="cards-container">
+            <!-- JavaScript will populate cards -->
+        </div>
+    </section>
+
+    <script>
+        const projects = [
+            {
+                title: "Project One",
+                desc: "Yeh ek demo project hai jisme responsive layout dikhaya gaya hai.",
+                link: "#",
+                image: "Image 1"
+            },
+            {
+                title: "Project Two",
+                desc: "Yeh ek aur demo project hai jise aap explore kar sakte hain.",
+                link: "#",
+                image: "Image 2"
+            },
+            {
+                title: "Project Three",
+                desc: "Is project ka UI aur animation aap dekh sakte hain demo mein.",
+                link: "#",
+                image: "Image 3"
+            },
+            {
+                title: "Project Four",
+                desc: "Ye project backend logic aur form handling show karta hai.",
+                link: "#",
+                image: "Image 4"
+            }
+        ];
+
+        const container = document.getElementById('cards-container');
+
+        projects.forEach((project, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            card.innerHTML = `
+        <div class="card-img">${project.image}</div>
+        <div class="card-body">
+          <h3 class="card-title">${project.title}</h3>
+          <p class="card-desc">${project.desc}</p>
+          <a href="${project.link}" class="demo-btn" target="_blank">Demo Website</a>
+        </div>
+      `;
+
+            container.appendChild(card);
+        });
+    </script>
+
+</body>
+
+</html>
